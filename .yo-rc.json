@@ -1,0 +1,10 @@
+{
+  "generator-gulpplugin-coffee": {
+    "githubUser": "mrtnbroder",
+    "pluginName": "reduce",
+    "appname": "gulp-reduce",
+    "realname": "Martin Broder",
+    "email": "hello@martinbroder.com",
+    "homepage": "martinbroder.com"
+  }
+}
