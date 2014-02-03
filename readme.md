@@ -1,6 +1,7 @@
 # gulp-reduce [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url] [![devDependency Status][devdepstat-image]][devdepstat-url]
 
+Heavily inspired by [grunt-reduce](https://github.com/Munter/grunt-reduce/).
 
 > Reduce plugin for [gulp](http://gulpjs.com/) 3.
 
@@ -18,21 +19,28 @@ Then, add it to your `gulpfile.js`:
 var gulp = require('gulp');
 var reduce = require('gulp-reduce');
 
-gulp.task('default', function () {
-    gulp.src('./src/*.ext')
-        .pipe(reduce({msg: 'More Coffee!'}))
-        .pipe(gulp.dest("./dist"));
+gulp.task('build', function () {
+    gulp.src(['src/*.html'])
+        .pipe(reduce({
+            root: 'src',
+            outRoot: 'dist'
+        }));
 });
 ```
 
-## Options `reduce(opt)`
+## Options `reduce(options)`
 
-## opt.msg
+## options.root
 Type: `String`
-Default: `More Coffee!`
+Default: `app`
 
-The message you wish to attach to file.
+Root path of your app.
 
+## options.outRoot
+Type: `String`
+Default: `app`
+
+Destination path (where all files will be put).
 
 ## License
 
