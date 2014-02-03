@@ -13,6 +13,7 @@ gulpReduce = (options = {}) ->
 
     # check validity of input
     # it's okay to throw here
+
     if typeof options isnt 'object'
         throw createPluginError 'options param needs to be an object'
 
@@ -48,9 +49,11 @@ gulpReduce = (options = {}) ->
 
             .on 'afterTransform', (transform, elapsedTime) ->
                 console.log((elapsedTime / 1000).toFixed(3) + ' secs: ' + transform.name)
+
             .on 'warn', (err) ->
                 if err.relationType isnt 'JavaScriptCommonJsRequire'
                     console.warn((if err.asset then err.asset.urlOrDescription + ': ' else '') + err.message)
+
             .on 'error', (err) ->
                 console.error((if err.asset then err.asset.urlOrDescription + ': ' else '') + err.stack)
 
@@ -84,7 +87,5 @@ gulpReduce = (options = {}) ->
             .endif()
             .writeStatsToStderr()
             .run(done)
-    #     @push file
-    # done()
 
 module.exports = gulpReduce
