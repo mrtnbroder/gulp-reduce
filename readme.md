@@ -1,9 +1,12 @@
 # gulp-reduce [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url] [![devDependency Status][devdepstat-image]][devdepstat-url]
 
-Heavily inspired by [grunt-reduce](https://github.com/Munter/grunt-reduce/).
+# WIP!
 
-> Reduce plugin for [gulp](http://gulpjs.com/) 3.
+Heavily inspired by [grunt-reduce](https://github.com/Munter/grunt-reduce/).
+Thanks a lot to [@Munter](https://github.com/Munter/), as most of the code here is just basically based on his code.
+
+concatinates,
 
 ## Usage
 
@@ -20,7 +23,12 @@ var gulp = require('gulp');
 var reduce = require('gulp-reduce');
 
 gulp.task('build', function () {
-    gulp.src(['src/*.html'])
+    gulp.src([
+        'src/*.html',
+        'src/*.htaccess',
+        'src/*.txt',
+        'src/*.ico'
+    ])
         .pipe(reduce({
             root: 'src',
             outRoot: 'dist'

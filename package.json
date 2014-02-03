@@ -1,7 +1,7 @@
 {
   "name": "gulp-reduce",
-  "version": "0.0.0",
-  "description": "A plugin for gulp",
+  "version": "0.0.1",
+  "description": "Forget all other gulp-task. This is all you need to optimize your webapp for production.",
   "keywords": [
     "gulpplugin"
   ],
