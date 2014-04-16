@@ -31,7 +31,7 @@ gulpReduce = (options = {}) ->
             inlineSize: options.inlineSize or 4096
             manifest: options.manifest or false
             prettyPrint: options.prettyPrint or true
-            gzip: options.gzip or true
+            gzip: options.gzip or false
             loadAssets: file.relative or [
                 '*.html'
                 '.htaccess'
@@ -44,6 +44,20 @@ gulpReduce = (options = {}) ->
                 'Firefox ESR'
                 'Opera 12.1'
             ]
+
+        _settings =
+            less: defaults.less
+            optimizeImages: defaults.optimizeImages
+            inlineSize: defaults.inlineSize
+            autoprefix: defaults.autoprefix
+            manifest: defaults.manifest
+            asyncScripts: defaults.asyncScripts
+            cdnRoot: defaults.cdnRoot
+            prettyPrint: defaults.prettyPrint
+            sharedBundles: defaults.sharedBundles
+        if defaults.gzip is true
+            _settings.gzip = true
+
 
         new AssetGraph(root: defaults.rootUrl)
 
@@ -59,18 +73,7 @@ gulpReduce = (options = {}) ->
 
             .registerRequireJsConfig()
             .loadAssets(defaults.loadAssets)
-            .buildProduction(
-                less: defaults.less
-                optimizeImages: defaults.optimizeImages
-                inlineSize: defaults.inlineSize
-                autoprefix: defaults.autoprefix
-                manifest: defaults.manifest
-                asyncScripts: defaults.asyncScripts
-                cdnRoot: defaults.cdnRoot
-                prettyPrint: defaults.prettyPrint
-                sharedBundles: defaults.sharedBundles
-                gzip: defaults.gzip
-            )
+            .buildProduction(_settings)
             .writeAssetsToDisc(
                 url: /^file:/
             ,
