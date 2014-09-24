@@ -60,17 +60,7 @@ gulpReduce = (options = {}) ->
 
 
         new AssetGraph(root: defaults.rootUrl)
-
-            .on 'afterTransform', (transform, elapsedTime) ->
-                console.log((elapsedTime / 1000).toFixed(3) + ' secs: ' + transform.name)
-
-            .on 'warn', (err) ->
-                if err.relationType isnt 'JavaScriptCommonJsRequire'
-                    console.warn((if err.asset then err.asset.urlOrDescription + ': ' else '') + err.message)
-
-            .on 'error', (err) ->
-                console.error((if err.asset then err.asset.urlOrDescription + ': ' else '') + err.stack)
-
+            .logEvents()
             .registerRequireJsConfig()
             .loadAssets(defaults.loadAssets)
             .buildProduction(_settings)
