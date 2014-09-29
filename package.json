@@ -22,14 +22,8 @@
   "dependencies": {
     "gulp-util": "~2.2.5",
     "through2": "~0.4.0",
-    "urltools": "~0.1.0",
-    "assetgraph-builder": "~1.8.11",
-    "assetgraph-sprite": "~0.6.0",
-    "gulp": "^3.6.0",
-    "should": "^3.3.1",
-    "coffeelint": "^1.2.0",
-    "mocha": "^1.18.2",
-    "coveralls": "^2.10.0"
+    "urltools": "~0.2.0",
+    "assetgraph-builder": "~2.4.1"
   },
   "devDependencies": {
     "coffee-script": "^1.7.1",
@@ -40,12 +34,7 @@
     "coveralls": "^2.7.1",
     "gulp": "^3.5.6",
     "gulp-coffee": "^1.4.1",
-    "gulp-clean": "^0.2.4",
-    "through2": "^0.4.1",
-    "urltools": "^0.1.0",
-    "gulp-util": "^2.2.14",
-    "assetgraph-sprite": "^0.6.0",
-    "assetgraph-builder": "^1.8.36"
+    "gulp-clean": "^0.2.4"
   },
   "engines": {
     "node": ">=0.10.0"
