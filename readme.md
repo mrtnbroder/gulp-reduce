@@ -1,7 +1,7 @@
 # gulp-reduce [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependency Status][depstat-image]][depstat-url] [![devDependency Status][devdepstat-image]][devdepstat-url]
 
-# WIP!
+# Deprecated!
 
 Heavily inspired by [grunt-reduce](https://github.com/Munter/grunt-reduce/).
 Thanks a lot to [@Munter](https://github.com/Munter/), as most of the code here is just basically based on his code.
